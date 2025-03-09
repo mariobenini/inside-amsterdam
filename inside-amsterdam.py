@@ -136,10 +136,12 @@ marker_cluster = MarkerCluster().add_to(m)
 # Add listings to the map with popups
 for _, row in filtered_listings.iterrows():
     popup_content = f"""
+    <img src={row['picture_url']} alt="Listing Image" width="200" height="200" /><br>
     <b>Name:</b> {row['name']}<br>
-    <b>Price:</b> ${row['price_cleansed']}<br>
+    <b>Price:</b> €{row['price_cleansed']}<br>
     <b>Room Type:</b> {row['room_type']}<br>
     <b>Reviews:</b> {row['number_of_reviews']}<br>
+    <b>Ratings:</b> {row['review_scores_rating']}<br>
     <b>Link:</b> <a href="{row['listing_url']}" target="_blank">View Listing</a>
     """
     folium.CircleMarker(
