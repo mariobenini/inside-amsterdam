@@ -1,4 +1,5 @@
 # Inside Amsterdam: Airbnb Listings Analysis 🏡🌍
+Link to the deployed project: [InsideAmsterdam](https://inside-amsterdam.streamlit.app/)
 
 ## Overview 📊
 This project is a **data analysis and visualization tool** built using **Python** and **Streamlit**. It provides insights into Airbnb listings in **Amsterdam**, allowing users to explore data at both the **city-wide** and **neighborhood** levels. 
