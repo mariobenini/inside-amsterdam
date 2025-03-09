@@ -5,6 +5,9 @@ from streamlit_folium import folium_static
 import geopandas as gpd
 from folium.plugins import MarkerCluster
 
+# Set page layout
+st.set_page_config(layout="wide")
+
 # Load data
 @st.cache_data
 def load_data():
@@ -14,19 +17,16 @@ def load_data():
 
 listings, neighbourhoods = load_data()
 
-# Set page layout
-st.set_page_config(layout="wide")
-
 # Create two columns (1:2 ratio)
 col1, col2 = st.columns([1, 2])
 
 # Left column (1/3 of the screen)
 with col1:
-    st.header("Filters and Analytics")
+    st.header("Amsterdam")
     
     # Add "Amsterdam (all areas)" option to the neighborhood filter
     neighbourhood_options = ["Amsterdam (all areas)"] + sorted(listings["neighbourhood_cleansed"].unique())
-    neighbourhood = st.selectbox("Neighbourhood", neighbourhood_options)
+    neighbourhood = st.selectbox("Filter by Neighbourhood:", neighbourhood_options)
 
     # Filter data
     if neighbourhood == "Amsterdam (all areas)":
